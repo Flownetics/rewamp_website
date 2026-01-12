@@ -197,7 +197,7 @@ export default function PathToProductionDetail() {
               <img 
                 src={getImagePath(step.id)}
                 alt={step.label} 
-                className="w-full h-full object-contain max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px] mx-auto block"
+                className="w-full h-full object-contain max-h-[300px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[550px] mx-auto block"
               />
             </div>
           </div>
