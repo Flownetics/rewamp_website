@@ -264,7 +264,8 @@ export default function Pillars() {
             ))}
           </div>
 
-          <div ref={detailPanelRef} className="lg:sticky lg:top-24 detail-panel-container lg:col-span-3">
+          <div ref={detailPanelRef} className="lg:sticky lg:top-24 detail-panel-container lg:col-span-3 space-y-6">
+            {/* Top Dynamic Card */}
             {selectedPillar && (
               <div
                 className={`detail-panel bg-gradient-to-br from-gray-800/60 via-gray-800/40 to-gray-800/60 border border-gray-700/50 rounded-2xl p-5 sm:p-7 shadow-2xl cursor-purple transition-all duration-300 flex flex-col ${
@@ -313,7 +314,7 @@ export default function Pillars() {
 
                 {/* Key Benefits - Show only first 2 */}
                 {selectedPillar.keyBenefits && selectedPillar.keyBenefits.length > 0 && (
-                  <div className="bg-gray-900/40 rounded-xl p-4 shadow-sm mb-4 flex-grow">
+                  <div className="bg-gray-900/40 rounded-xl p-4 shadow-sm mb-4">
                     <h4 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3" style={{ fontFamily: "'FF Nort', sans-serif" }}>
                       Key Benefits
                     </h4>
@@ -334,87 +335,6 @@ export default function Pillars() {
                   </ul>
                 </div>
                 )}
-
-                {/* Visual Design Element */}
-                <div className="mt-6 mb-4 pt-6 border-t border-gray-700/30">
-                  <div className="relative bg-gradient-to-br from-gray-900/60 to-gray-800/40 rounded-xl p-6 overflow-hidden">
-                    {/* Decorative Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-white"/>
-                          </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#grid)" />
-                      </svg>
-                    </div>
-                    
-                    {/* Flow Path Illustration */}
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex-1">
-                          <div className="h-1 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 rounded-full mb-2"></div>
-                          <p className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            Continuous Flow Process
-                          </p>
-                        </div>
-                        <div className="ml-4 flex items-center gap-2">
-                          <div className={`w-3 h-3 rounded-full ${
-                            selectedPillar.accentColor.includes('orange') ? 'bg-brand-orange' :
-                            selectedPillar.accentColor.includes('purple') ? 'bg-brand-purple' :
-                            'bg-brand-green'
-                          } animate-pulse`}></div>
-                          <div className={`w-2 h-2 rounded-full ${
-                            selectedPillar.accentColor.includes('orange') ? 'bg-brand-orange/50' :
-                            selectedPillar.accentColor.includes('purple') ? 'bg-brand-purple/50' :
-                            'bg-brand-green/50'
-                          }`}></div>
-                        </div>
-                      </div>
-                      
-                      {/* Stats Grid */}
-                      <div className="grid grid-cols-3 gap-3 mt-4">
-                        <div className="text-center p-3 bg-gray-800/40 rounded-lg">
-                          <div className={`text-lg font-medium mb-1 ${
-                            selectedPillar.accentColor.includes('orange') ? 'text-brand-orange' :
-                            selectedPillar.accentColor.includes('purple') ? 'text-brand-purple' :
-                            'text-brand-green'
-                          }`} style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            {selectedPillar.id === 1 ? '27%' : selectedPillar.id === 2 ? '0%' : selectedPillar.id === 3 ? '15' : selectedPillar.id === 4 ? '93%' : selectedPillar.id === 5 ? '100%' : '∞'}
-                          </div>
-                          <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            {selectedPillar.id === 1 ? 'Cost ↓' : selectedPillar.id === 2 ? 'Risk' : selectedPillar.id === 3 ? 'Months ROI' : selectedPillar.id === 4 ? 'Yield' : selectedPillar.id === 5 ? 'Resilient' : 'Versatile'}
-                          </div>
-                        </div>
-                        <div className="text-center p-3 bg-gray-800/40 rounded-lg">
-                          <div className={`text-lg font-medium mb-1 ${
-                            selectedPillar.accentColor.includes('orange') ? 'text-brand-orange' :
-                            selectedPillar.accentColor.includes('purple') ? 'text-brand-purple' :
-                            'text-brand-green'
-                          }`} style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            {selectedPillar.id === 1 ? '25%' : selectedPillar.id === 2 ? '60%' : selectedPillar.id === 3 ? '0' : selectedPillar.id === 4 ? '80%' : selectedPillar.id === 5 ? '∞' : '100%'}
-                          </div>
-                          <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            {selectedPillar.id === 1 ? 'Yield ↑' : selectedPillar.id === 2 ? 'Heat ↑' : selectedPillar.id === 3 ? 'CAPEX' : selectedPillar.id === 4 ? 'Waste ↓' : selectedPillar.id === 5 ? 'Scalable' : 'Quality'}
-                          </div>
-                        </div>
-                        <div className="text-center p-3 bg-gray-800/40 rounded-lg">
-                          <div className={`text-lg font-medium mb-1 ${
-                            selectedPillar.accentColor.includes('orange') ? 'text-brand-orange' :
-                            selectedPillar.accentColor.includes('purple') ? 'text-brand-purple' :
-                            'text-brand-green'
-                          }`} style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            ✓
-                          </div>
-                          <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                            Validated
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="pt-4 border-t border-gray-700/50 mt-auto">
                   <a
@@ -439,6 +359,67 @@ export default function Pillars() {
                 </div>
               </div>
             )}
+
+            {/* Bottom Static Card */}
+            <div className="bg-gradient-to-br from-gray-800/60 via-gray-800/40 to-gray-800/60 border border-gray-700/50 rounded-2xl p-5 sm:p-7 shadow-2xl">
+              <div className="relative bg-gradient-to-br from-gray-900/60 to-gray-800/40 rounded-xl p-6 overflow-hidden">
+                {/* Decorative Background Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-white"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                  </svg>
+                </div>
+                
+                {/* Flow Path Illustration */}
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="h-1 bg-gradient-to-r from-brand-purple/50 via-brand-green/50 to-brand-orange/50 rounded-full mb-2"></div>
+                      <p className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        Continuous Flow Process
+                      </p>
+                    </div>
+                    <div className="ml-4 flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-brand-green animate-pulse"></div>
+                      <div className="w-2 h-2 rounded-full bg-brand-green/50"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-3 gap-3 mt-4">
+                    <div className="text-center p-3 bg-gray-800/40 rounded-lg">
+                      <div className="text-lg font-medium mb-1 text-brand-green" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        27%
+                      </div>
+                      <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        Avg Cost ↓
+                      </div>
+                    </div>
+                    <div className="text-center p-3 bg-gray-800/40 rounded-lg">
+                      <div className="text-lg font-medium mb-1 text-brand-purple" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        93%
+                      </div>
+                      <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        Isolated Yield
+                      </div>
+                    </div>
+                    <div className="text-center p-3 bg-gray-800/40 rounded-lg">
+                      <div className="text-lg font-medium mb-1 text-brand-orange" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        15
+                      </div>
+                      <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        Months ROI
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -460,9 +441,9 @@ export default function Pillars() {
 
         @media (min-width: 1024px) {
           .detail-panel-container {
-            height: 100%;
             display: flex;
-            align-items: stretch;
+            flex-direction: column;
+            gap: 1.5rem;
           }
           
           .detail-panel {
