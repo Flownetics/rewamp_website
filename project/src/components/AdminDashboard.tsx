@@ -830,7 +830,7 @@ export default function AdminDashboard() {
             ) : activeTab === 'ai-analyses' ? (
               <div className="space-y-4">
                 <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-xl font-semibold text-white">AI Process Architect Analyses</h2>
+                  <h2 className="text-xl font-semibold text-white">Flow Suitability Checker Analyses</h2>
                   {aiAnalyses.length > 0 && (
                     <button
                       onClick={handleExportAIAnalyses}

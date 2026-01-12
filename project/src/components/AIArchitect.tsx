@@ -39,9 +39,9 @@ export default function AIArchitect() {
             model: model,
             messages: [{
               role: "system",
-              content: `You are a Sustainability Assessment AI at Flownetics Engineering (www.flownetics-engg.com), specializing in evaluating chemical processes for environmental impact and sustainability in flow chemistry applications.
+              content: `You are a Flow Readiness Assessment AI at Flownetics Engineering (www.flownetics-engg.com), specializing in evaluating chemical processes for flow chemistry suitability and readiness.
 
-FLOW CHEMISTRY SUSTAINABILITY RULES & PRECAUTIONS:
+FLOW CHEMISTRY READINESS RULES & PRECAUTIONS:
 
 1. WASTE MINIMIZATION (Critical):
    - Flow chemistry typically reduces waste by 60-80% compared to batch processes
@@ -78,14 +78,14 @@ FLOW CHEMISTRY SUSTAINABILITY RULES & PRECAUTIONS:
    - Evaluate: Process robustness, reproducibility, scale-up challenges
    - Score higher for processes that scale efficiently without quality degradation
 
-SUSTAINABILITY SCORING CRITERIA (0-10):
+FLOW READINESS SCORING CRITERIA (0-10):
 - 9-10: Excellent - Highly suitable for flow chemistry, minimal environmental impact
 - 7-8: Good - Well-suited with some optimization opportunities
 - 5-6: Moderate - Suitable with process modifications
 - 3-4: Challenging - Requires significant optimization
 - 0-2: Poor - Not recommended for flow chemistry without major redesign
 
-Always provide specific, actionable sustainability insights. Reference Flownetics' validated processes when relevant. Format responses as HTML without markdown or html/body tags.`
+Always provide specific, actionable flow readiness insights. Reference Flownetics' validated processes when relevant. Format responses as HTML without markdown or html/body tags.`
             }, {
               role: "user",
               content: `User input: "${input}"
@@ -110,7 +110,7 @@ OTHERWISE, if you can identify ANY chemical reaction or process (even if mention
 
 IF the input IS a valid reaction/process name, provide ONLY these three sections in HTML format (no markdown, no html/body tags). Keep content brief and concise. Use inline styles.
 
-<h3 style="font-size: 1.75rem; font-weight: 600; color: #057210; margin-bottom: 1.5rem; font-family: 'FF Nort', sans-serif;">Sustainability Score: [X]/10</h3>
+<h3 style="font-size: 1.75rem; font-weight: 600; color: #057210; margin-bottom: 1.5rem; font-family: 'FF Nort', sans-serif;">Flow Readiness Score: [X]/10</h3>
 
 <div style="margin-bottom: 1.5rem;">
   <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 0.75rem; font-family: 'FF Nort', sans-serif;">Reaction Overview</h4>
@@ -156,9 +156,9 @@ IMPORTANT: Always provide complete, full answers. Do not truncate or cut off res
       setResult(cleanHtml);
       setShowResult(true);
 
-      // Extract sustainability score from HTML (format: "Sustainability Score: X/10")
+      // Extract flow readiness score from HTML (format: "Flow Readiness Score: X/10")
       let feasibilityScore: number | null = null;
-      const scoreMatch = cleanHtml.match(/Sustainability Score:\s*(\d+)\/10/i);
+      const scoreMatch = cleanHtml.match(/Flow Readiness Score:\s*(\d+)\/10/i);
       if (scoreMatch) {
         feasibilityScore = parseInt(scoreMatch[1], 10);
       }
@@ -204,10 +204,10 @@ IMPORTANT: Always provide complete, full answers. Do not truncate or cut off res
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-gray-900" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                AI Process Architect.
+            Flow Suitability Checker.
               </h2>
           </div>
-          <p className="text-gray-600 text-lg font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>Validate your molecule for flow chemistry in seconds.</p>
+          <p className="text-gray-600 text-lg font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>See if your chemistry suits continuous flow.</p>
         </div>
 
         <div className="w-full">
@@ -235,7 +235,7 @@ IMPORTANT: Always provide complete, full answers. Do not truncate or cut off res
                     <span>Analyzing...</span>
                   </>
                 ) : (
-                  <span>Check Sustainability Score</span>
+                  <span>Check Flow Readiness</span>
                 )}
               </button>
             </div>
