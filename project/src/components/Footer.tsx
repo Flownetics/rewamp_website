@@ -72,7 +72,7 @@ export default function Footer() {
               </p>
               <div className="flex gap-2">
                 <a
-                  href="https://linkedin.com/company/flownetics"
+                  href="https://in.linkedin.com/company/flownetics-engineering"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 sm:w-8 sm:h-8 bg-brand-purple/20 flex items-center justify-center hover:bg-brand-purple transition-colors rounded"
