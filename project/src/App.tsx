@@ -43,9 +43,9 @@ function HomePage() {
       <AIArchitect />
       <Advantage />
       <FactoryAsAService />
+      <CalculatorWizard />
       <About />
       <Blog />
-      <CalculatorWizard />
       <Contact />
     </>
   );
