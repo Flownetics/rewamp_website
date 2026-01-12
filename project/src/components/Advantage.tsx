@@ -8,22 +8,22 @@ export const steps = [
     number: '01',
     label: 'Feasibility Study',
     title: 'Feasibility Study: How Can We',
-    description: 'Before you commit a single dollar to new equipment, we need to prove that your chemistry actually works in flow.',
+    description: 'Before you commit capital to new equipment, we must validate that your chemistry is technically and economically viable in a continuous flow environment.',
     color: '#702594',
     labelColor: 'text-brand-purple',
     delay: '0ms',
-    overview: 'Before you commit a single dollar to new equipment, we need to prove that your chemistry actually works in flow. In this stage, we take your existing "batch recipe", The one that might be slow or inconsistent and re-map it for a continuous system. We aren\'t just looking for a "yes"; we are looking for the economic "why".',
+    overview: 'Before you commit capital to new equipment, we must validate that your chemistry is technically and economically viable in a continuous flow environment. In this stage, we take your existing "batch recipe"—which may suffer from inconsistent yields or slow kinetics—and re-map it for a continuous system. We aren\'t just looking for a technical "yes"; we are identifying the economic "why".',
     whatWeDo: [
-      'Map the Parameters: We identify the exact temperature, pressure, and timing needed to make your reaction perfect.',
-      'Eliminate Guesswork: We provide a 20–30% cost projection decrease right at the start so you know the ROI before moving forward.',
-      'Proof First: This is where our "Risk Acknowledgment" pillar starts—we find the problems in the lab, not in your factory.'
+      'Kinetic & Parameter Mapping: We identify the precise temperature, pressure, and residence time required to optimize the reaction profile.',
+      'Eliminate Guesswork: We provide a 20–30% manufacturing cost reduction projection at the outset so you can verify the ROI before proceeding.',
+      'Proof First: This initiates our "Risk Acknowledgment" pillar—we isolate and solve complex process challenges in the lab to prevent failures in your facility.'
     ],
     caseStudy: {
-      title: 'Case Study Spotlight',
-      problem: 'A client needed to localize a starting material usually sourced from China. The chemistry required a dangerous 400°C temperature, which caused thermal degradation and material loss in traditional batch setups.',
-      essence: 'We re-developed the process for a custom high-temperature flow platform.',
-      result: 'We proved feasibility by achieving one-pot synthesis with minimal heat exposure, increasing both yield and selectivity before the client spent any capital on a plant.',
-      businessTakeaway: 'We de-risk the "scary" chemistry early so you don\'t have to.'
+      title: 'Case Study Spotlight: High-Temperature KSM',
+      problem: 'A manufacturer needed to localize a starting material previously sourced from China. The chemistry required a hazardous 400°C operating temperature, which caused significant thermal degradation and material loss in traditional batch setups.',
+      essence: 'We re-engineered the process for a custom high-temperature flow platform designed for rapid heat transfer and precise residence time control.',
+      result: 'We achieved a one-pot synthesis with minimal heat exposure, resulting in increased yield and selectivity while reducing solvent volumes.',
+      businessTakeaway: 'We de-risk "scary" chemistries at the R&D level, enabling localized supply chain independence.'
     },
     technicalCapabilities: [],
     deliverables: [],
@@ -33,23 +33,23 @@ export const steps = [
     id: 'process-optimization',
     number: '02',
     label: 'Process Optimization',
-    title: 'Process Optimization & Scale-up: The "Efficiency"',
-    description: 'Once we know the chemistry works in flow, we don\'t just stop there. We "squeeze the lemon" to get every bit of efficiency out of the process.',
+    title: 'Process Optimization & Scale-up: Efficiency Re-engineered',
+    description: 'Once feasibility is proven, we focus on Process Intensification. This phase is about maximizing space-time yield and stripping away the inherent inefficiencies of batch processing.',
     color: '#1406b3',
     labelColor: 'text-brand-blue',
     delay: '200ms',
-    overview: 'Once we know the chemistry works in flow, we don\'t just stop there. In this stage, we "squeeze the lemon" to get every bit of efficiency out of the process. We focus on making the reaction as fast, clean, and cheap as possible before building the final platform.',
+    overview: 'Once feasibility is proven, we focus on Process Intensification. This phase is about maximizing space-time yield and stripping away the inherent inefficiencies of batch processing, such as long heating/cooling cycles and manual handling.',
     whatWeDo: [
-      'Process Intensification: We shrink the reaction time and maximize your yield while using fewer resources like solvents and energy.',
-      'Simplify the Workflow: We look at the "after-work" (downstream processing). If we can eliminate messy steps like catalyst filtration, we do it.',
-      'Guarantee Quality: We ensure the product consistently meets strict global standards, such as USP or EP specifications, every single time.'
+      'Intensify the Process: We re-engineer the reaction to maximize throughput while minimizing resource consumption, such as catalyst loads and energy.',
+      'Streamline Downstream: We analyze the entire value chain to eliminate redundant unit operations, such as mid-process filtration or solvent swaps.',
+      'Quality Assurance: We ensure the optimized process consistently meets stringent global standards, including USP and EP specifications.'
     ],
     caseStudy: {
-      title: 'Case Study Spotlight',
-      problem: 'A standard batch process was taking 35 hours to complete and required messy catalyst filtration.',
-      essence: 'We intensified the process to maximize yield while minimizing resource consumption.',
-      result: 'We slashed cycle time by 42% (from 35 hours down to 20) and completely eliminated the need for catalyst filtration, simplifying the entire downstream operation.',
-      businessTakeaway: 'We don\'t just move you to flow; we make your process significantly faster and cleaner.'
+      title: 'Case Study Spotlight: Reductive Amination',
+      problem: 'An existing batch process was operationally heavy, requiring 35 hours per cycle and complex catalyst management.',
+      essence: 'We optimized the kinetics to transition the chemistry into a continuous environment with mapped thermal and pressure parameters.',
+      result: 'Cycle time was reduced by 42% (from 35 hours down to 20 hours), and we simplified the downstream by completely eliminating the need for catalyst filtration.',
+      businessTakeaway: 'We don\'t just move you to flow; we build a faster, leaner process that produces higher quality material with 25% better efficiency.'
     },
     businessValue: {
       title: 'The Business Value',
@@ -67,24 +67,23 @@ export const steps = [
     id: 'commercialization',
     number: '03',
     label: 'Commercialization',
-    title: 'Commercialization & Factory-as-a-Service',
-    description: 'This is where the vision becomes a reality on your factory floor. Instead of you spending millions on a permanent setup, we install a modular, automated platform at your site.',
+    title: 'Commercialization & FaaS',
+    description: 'The final phase brings the innovation to your plant floor through our Factory-as-a-Service (FaaS) model. We deploy a modular, automated platform that scales your production without the burden of traditional capital expenditure.',
     color: '#057210',
     labelColor: 'text-brand-green',
     delay: '400ms',
-    overview: 'This is where the vision becomes a reality on your factory floor. Instead of you spending millions on a permanent setup that might become obsolete, we install a modular, automated platform at your site. We don\'t just hand over the keys; we run it for you under our Factory-as-a-Service (FaaS) model. You only pay for the results, not the heavy machinery.',
+    overview: 'The final phase brings the innovation to your plant floor through our Factory-as-a-Service (FaaS) model. We deploy a modular, automated platform that scales your production without the burden of traditional capital expenditure.',
     whatWeDo: [
-      'Modular Deployment: We build and install a custom reactor and modular platform directly at your site.',
-      'Full Automation: The system is AI-driven and IoT-enabled, allowing for remote monitoring and consistent, "push-button" manufacturing.',
-      'Zero-Capex Shift: We move the financial burden from your balance sheet (CAPEX) to a predictable operational expense (OPEX) through a subscription fee.',
-      'Continuous Innovation: You get exclusive access to any software or hardware upgrades we develop, keeping your plant at the cutting edge.'
+      'Modular Deployment: We install a custom reactor and automated platform at your site, designed for your specific throughput requirements.',
+      'AI-Driven Automation: Our systems utilize IoT and proprietary software for remote monitoring and "push-button" manufacturing consistency.',
+      'Zero-Capex Engagement: We shift the financial model from CAPEX to a transparent, OPEX-based subscription tied to your actual production and savings.'
     ],
     caseStudy: {
       title: 'Case Study Spotlight: API Precursor (Diazotization)',
-      problem: 'The client dealt with a highly unstable, hazardous, and exothermic reaction (100°C exotherm) to produce 5 tons per month.',
-      essence: 'We built and installed a modular, telescopic flow platform at the customer\'s site.',
-      result: '18% Cost Reduction and 44% Effluent Reduction. Zero Risk: The client achieved ROI in just 15 months through savings alone, without the initial burden of purchasing the equipment.',
-      businessTakeaway: 'You get a world-class, automated factory on a subscription basis, paying only for the value delivered.'
+      problem: 'The production of an API precursor involved a highly unstable diazo-intermediate and a dangerous 100°C exotherm, which were difficult to manage at a scale of 5 tons per month in batch.',
+      essence: 'We developed a telescopic flow system with a Heat Transfer (HT) coefficient greater than 2000 to manage the extreme thermal energy.',
+      result: 'We successfully scaled from 0.1 kg/hr in the lab to a 5 tons/month industrial capacity with a 93% isolated yield.',
+      businessTakeaway: 'By adopting FaaS, the client achieved an 18% cost reduction and a 44% decrease in effluents, reaching full ROI in just 15 months through operational savings alone.'
     },
     technicalCapabilities: [],
     deliverables: [],
