@@ -5,6 +5,7 @@ import VideoSection from './components/VideoSection';
 import Pillars from './components/Pillars';
 import AIArchitect from './components/AIArchitect';
 import CalculatorWizard from './components/CalculatorWizard';
+import Calculator from './components/Calculator';
 import Advantage from './components/Advantage';
 import FactoryAsAService from './components/FactoryAsAService';
 import About from './components/About';
@@ -39,13 +40,22 @@ function HomePage() {
       />
       <Hero />
       <VideoSection />
-      <Pillars />
-      <AIArchitect />
-      <CalculatorWizard />
+      {/* Banner */}
+      <div className="w-full relative overflow-hidden">
+        <img 
+          src="/media/bar.jpg" 
+          alt="Flownetics Engineering - Flow Chemistry Solutions" 
+          className="w-full h-3 object-cover"
+        />
+      </div>
+      <Calculator />
       <Advantage />
       <FactoryAsAService />
+      <AIArchitect />
+      <Pillars />
       <About />
       <Blog />
+      <CalculatorWizard />
       <Contact />
     </>
   );
@@ -62,13 +72,6 @@ function App() {
         <Route path="/path-to-production/:stepId" element={<PathToProductionDetail />} />
         <Route path="/gdhjeuebd/snhdhftT" element={<AdminDashboard />} />
       </Routes>
-      <div className="w-full relative overflow-hidden">
-        <img 
-          src="/media/bar.jpg" 
-          alt="Flownetics Engineering - Flow Chemistry Solutions" 
-          className="w-full h-3 object-cover"
-        />
-      </div>
       <Footer />
     </div>
   );
