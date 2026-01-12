@@ -375,45 +375,95 @@ export default function Pillars() {
                   </svg>
                 </div>
                 
-                {/* Flow Path Illustration */}
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="h-1 bg-gradient-to-r from-brand-purple/50 via-brand-green/50 to-brand-orange/50 rounded-full mb-2"></div>
-                      <p className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        Continuous Flow Process
-                      </p>
-                    </div>
-                    <div className="ml-4 flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-brand-green animate-pulse"></div>
-                      <div className="w-2 h-2 rounded-full bg-brand-green/50"></div>
+                  {/* Fast Track Header */}
+                  <div className="mb-6">
+                    <h3 className="text-lg sm:text-xl font-medium text-white mb-1" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                      Fast Track
+                    </h3>
+                    <p className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                      From concept to production
+                    </p>
+                  </div>
+
+                  {/* Flow Path Illustration */}
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex-1">
+                        <div className="h-1.5 bg-gradient-to-r from-brand-purple/60 via-brand-green/60 to-brand-orange/60 rounded-full mb-2"></div>
+                        <p className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                          3-Phase Process
+                        </p>
+                      </div>
+                      <div className="ml-4 flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-brand-green animate-pulse"></div>
+                        <div className="w-2 h-2 rounded-full bg-brand-green/50"></div>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-3 gap-3 mt-4">
-                    <div className="text-center p-3 bg-gray-800/40 rounded-lg">
-                      <div className="text-lg font-medium mb-1 text-brand-green" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        27%
-                      </div>
-                      <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        Avg Cost ↓
-                      </div>
-                    </div>
-                    <div className="text-center p-3 bg-gray-800/40 rounded-lg">
-                      <div className="text-lg font-medium mb-1 text-brand-purple" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        93%
-                      </div>
-                      <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        Isolated Yield
+
+                  {/* Key Highlights Grid */}
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/30">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green"></div>
+                        <span className="text-xs text-gray-300 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                          Zero Scale-up Risk
+                        </span>
                       </div>
                     </div>
-                    <div className="text-center p-3 bg-gray-800/40 rounded-lg">
-                      <div className="text-lg font-medium mb-1 text-brand-orange" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        15
+                    <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/30">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-orange"></div>
+                        <span className="text-xs text-gray-300 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                          40% Lower CapEx
+                        </span>
+                      </div>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/30">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-purple"></div>
+                        <span className="text-xs text-gray-300 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                          Validated
+                        </span>
+                      </div>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/30">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green"></div>
+                        <span className="text-xs text-gray-300 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                          100+ molecules
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Services Row */}
+                  <div className="mb-6 pt-4 border-t border-gray-700/30">
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <span className="px-3 py-1.5 bg-gray-800/60 rounded-lg text-xs text-gray-300 font-light border border-gray-700/30" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        ISO & GMP Ready
+                      </span>
+                      <span className="px-3 py-1.5 bg-gray-800/60 rounded-lg text-xs text-gray-300 font-light border border-gray-700/30" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        24/7 Support
+                      </span>
+                      <span className="px-3 py-1.5 bg-gray-800/60 rounded-lg text-xs text-gray-300 font-light border border-gray-700/30" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        End-to-End Service
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* ROI Timeline */}
+                  <div className="pt-4 border-t border-gray-700/30">
+                    <div className="text-xs text-gray-400 font-light mb-2 uppercase tracking-wider" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                      ROI Timeline
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <div className="text-2xl sm:text-3xl font-medium text-brand-green" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                        15 Months
                       </div>
                       <div className="text-xs text-gray-400 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
-                        Months ROI
+                        Average payback period
                       </div>
                     </div>
                   </div>
