@@ -39,11 +39,11 @@ function HomePage() {
       />
       <Hero />
       <VideoSection />
-      <Pillars />
-      <AIArchitect />
+      <CalculatorWizard />
       <Advantage />
       <FactoryAsAService />
-      <CalculatorWizard />
+      <AIArchitect />
+      <Pillars />
       <About />
       <Blog />
       <Contact />
