@@ -6,7 +6,6 @@ import Pillars from './components/Pillars';
 import AIArchitect from './components/AIArchitect';
 import CalculatorWizard from './components/CalculatorWizard';
 import Advantage from './components/Advantage';
-import FactoryAsAService from './components/FactoryAsAService';
 import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
@@ -41,7 +40,6 @@ function HomePage() {
       <VideoSection />
       <CalculatorWizard />
       <Advantage />
-      <FactoryAsAService />
       <AIArchitect />
       <Pillars />
       <About />

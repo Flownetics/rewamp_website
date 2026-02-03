@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { steps } from './Advantage';
 
@@ -36,6 +37,11 @@ interface ExtendedStep {
 export default function PathToProductionDetail() {
   const { stepId } = useParams<{ stepId: string }>();
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts or stepId changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [stepId]);
 
   const step = steps.find((s) => s.id === stepId) as ExtendedStep | undefined;
   const currentIndex = steps.findIndex((s) => s.id === stepId);

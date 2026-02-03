@@ -7,11 +7,16 @@ export const steps = [
     id: 'feasibility-study',
     number: '01',
     label: 'Feasibility Study',
-    title: 'Feasibility Study: How Can We',
-    description: 'Before you commit capital to new equipment, we must validate that your chemistry is technically and economically viable in a continuous flow environment.',
+    title: 'Flow Feasibility & Evaluation',
+    description: 'First, we check whether your process is technically and economically viable in flow. Translate your batch route into a continuous development route. Map impact factors like temperature, pressure, and residence time ranges. Generate a first pass cost and savings view so you see the ROI signal early. Isolate and address high risk steps (exotherms, slurries, hazardous reagents) at lab scale',
+    questions: [
+      'Are you struggling with inconsistent yields, long cycle times, or safety limits in batch?',
+      'Do you need data to justify a move to flow before you talk about Capex?'
+    ],
     color: '#702594',
     labelColor: 'text-brand-purple',
     delay: '0ms',
+    callToAction: '→ Check your reaction\'s initial flow suitability with our screening tool.',
     overview: 'Before you commit capital to new equipment, we must validate that your chemistry is technically and economically viable in a continuous flow environment. In this stage, we take your existing "batch recipe"—which may suffer from inconsistent yields or slow kinetics—and re-map it for a continuous system. We aren\'t just looking for a technical "yes"; we are identifying the economic "why".',
     whatWeDo: [
       'Kinetic & Parameter Mapping: We identify the precise temperature, pressure, and residence time required to optimize the reaction profile.',
@@ -33,11 +38,16 @@ export const steps = [
     id: 'process-optimization',
     number: '02',
     label: 'Process Optimization',
-    title: 'Process Optimization & Scale-up: Efficiency Re-engineered',
-    description: 'Once feasibility is proven, we focus on Process Intensification. This phase is about maximizing space-time yield and stripping away the inherent inefficiencies of batch processing.',
+    title: 'Process Optimization & Scale Up',
+    description: 'Once feasibility looks positive, we focus on process intensification and scale up. Increase throughput, quality and space–time yield. Reduce solvent, reagent, energy and catalyst consumption. Simplify the flowsheet by removing unnecessary isolations and filtrations. Tune the process to consistently meet your specs and regulatory expectations',
+    questions: [
+      'Is your current route too slow, too solvent heavy, or hard to clean up?',
+      'Would a shorter, continuous flowsheet help you hit cost and ESG targets?'
+    ],
     color: '#1406b3',
     labelColor: 'text-brand-blue',
     delay: '200ms',
+    callToAction: '→ See if Flownetics can help intensify your process – start with a suitability check.',
     overview: 'Once feasibility is proven, we focus on Process Intensification. This phase is about maximizing space-time yield and stripping away the inherent inefficiencies of batch processing, such as long heating/cooling cycles and manual handling.',
     whatWeDo: [
       'Intensify the Process: We re-engineer the reaction to maximize throughput while minimizing resource consumption, such as catalyst loads and energy.',
@@ -68,10 +78,16 @@ export const steps = [
     number: '03',
     label: 'Commercialization',
     title: 'Commercialization & FaaS',
-    description: 'The final phase brings the innovation to your plant floor through our Factory-as-a-Service (FaaS) model. We deploy a modular, automated platform that scales your production without the burden of traditional capital expenditure.',
+    description: 'Finally, the optimized process becomes a commercial flow platform, often under FaaS. Deploy a modular, automated platform sized to your throughput. Integrate with your upstream and downstream operations. Add an IoT and data layer for real time monitoring and continuous improvement. Use an Opex based engagement where cost is linked to output and performance',
+    questions: [
+      'Do you need capacity for a new product without building a new plant?',
+      'Are you looking for a way to localize supply or de risk a high hazard route?',
+      'Would a FaaS/Opex model help you move faster than a traditional Capex project?'
+    ],
     color: '#057210',
     labelColor: 'text-brand-green',
     delay: '400ms',
+    callToAction: '→ Start by checking whether your chemistry is a good candidate for flow, then talk to us about FaaS.',
     overview: 'The final phase brings the innovation to your plant floor through our Factory-as-a-Service (FaaS) model. We deploy a modular, automated platform that scales your production without the burden of traditional capital expenditure.',
     whatWeDo: [
       'Modular Deployment: We install a custom reactor and automated platform at your site, designed for your specific throughput requirements.',
@@ -125,7 +141,7 @@ export default function Advantage() {
   );
 }
 
-function StepCard({ number, label, title, description, color, labelColor, delay, index, id }: {
+function StepCard({ number, label, title, description, color, labelColor, delay, index, id, questions, callToAction }: {
   number: string;
   label: string;
   title: string;
@@ -135,6 +151,8 @@ function StepCard({ number, label, title, description, color, labelColor, delay,
   delay: string;
   index: number;
   id: string;
+  questions?: string[];
+  callToAction?: string;
 }) {
   const cardRef = useScrollReveal<HTMLDivElement>();
   const navigate = useNavigate();
@@ -162,7 +180,7 @@ function StepCard({ number, label, title, description, color, labelColor, delay,
             {number}
           </span>
           <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-1.5 group-hover:scale-[1.02] transition-transform duration-300 overflow-hidden" style={{ fontFamily: "'FF Nort', sans-serif", maxHeight: '3.5rem' }}>
-            {title}
+            Phase {index + 1} – {title}
           </h3>
         </div>
 
@@ -170,6 +188,28 @@ function StepCard({ number, label, title, description, color, labelColor, delay,
         <p className="text-gray-600 text-xs leading-relaxed font-light mb-3 flex-1 overflow-hidden" style={{ fontFamily: "'FF Nort', sans-serif", maxHeight: '4rem' }}>
           {description}
         </p>
+
+        {/* Ask Yourself Section */}
+        {questions && questions.length > 0 && (
+          <div className="mb-3">
+            <h4 className="text-[10px] font-semibold text-gray-800 uppercase tracking-wider mb-2" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+              Ask yourself:
+            </h4>
+            <ul className="space-y-1.5">
+              {questions.map((question, qIndex) => (
+                <li key={qIndex} className="flex items-start gap-2">
+                  <div 
+                    className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0"
+                    style={{ backgroundColor: color }}
+                  ></div>
+                  <span className="text-gray-600 text-xs leading-relaxed font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
+                    {question}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Call to Action */}
         <div className="pt-2 border-t border-gray-200 mt-auto">
