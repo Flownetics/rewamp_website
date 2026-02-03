@@ -153,7 +153,23 @@ IF you cannot identify ANY chemical reaction or process in the input (e.g., pure
 
 OTHERWISE, if you can identify ANY chemical reaction or process (even if mentioned in a question or description), proceed with the analysis below.
 
-IF the input IS a valid reaction/process name, provide ONLY these three sections in HTML format (no markdown, no html/body tags). Keep content brief and concise. Use inline styles.
+IF the input IS a valid reaction/process name, FIRST determine the Flow Readiness Score (0-10), then provide content based on the score:
+
+CONTENT STRATEGY BASED ON SCORE:
+
+IF SCORE IS 0-6 (Low to Moderate):
+- Focus on WHY the score is low - explain the challenges, limitations, and difficulties
+- Emphasize the specific reasons this reaction is less suitable for flow chemistry
+- Mention what makes it challenging (e.g., solid handling, long residence times, complex workup, etc.)
+- Be honest about limitations rather than focusing on how we solve it
+- Still mention that Flownetics can help with process redesign if applicable, but keep it brief
+
+IF SCORE IS 7-10 (Good to Excellent):
+- Focus on advantages and benefits of flow chemistry for this reaction
+- Emphasize how Flownetics can help and their expertise
+- Highlight the positive aspects and opportunities
+
+Provide ONLY these sections in HTML format (no markdown, no html/body tags). Keep content brief and concise. Use inline styles.
 
 <h3 style="font-size: 1.75rem; font-weight: 600; color: #057210; margin-bottom: 1.5rem; font-family: 'FF Nort', sans-serif;">Flow Readiness Score: [X]/10</h3>
 
@@ -163,20 +179,33 @@ IF the input IS a valid reaction/process name, provide ONLY these three sections
 </div>
 
 <div style="margin-bottom: 1.5rem;">
-  <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 0.75rem; font-family: 'FF Nort', sans-serif;">Flow Chemistry Advantage</h4>
-  <p style="color: #4b5563; margin-bottom: 0; line-height: 1.7; font-size: 0.95rem; font-family: 'FF Nort', sans-serif;">[One concise paragraph explaining the main advantage of using flow chemistry for this reaction - focus on waste reduction, safety, energy efficiency, or scalability]</p>
+  <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 0.75rem; font-family: 'FF Nort', sans-serif;">
+    [IF SCORE 0-6: "Why This Score is Lower" | IF SCORE 7-10: "Flow Chemistry Advantage"]
+  </h4>
+  <p style="color: #4b5563; margin-bottom: 0; line-height: 1.7; font-size: 0.95rem; font-family: 'FF Nort', sans-serif;">
+    [IF SCORE 0-6: Explain the specific challenges, limitations, and reasons why this reaction scores lower for flow chemistry. Focus on what makes it difficult (e.g., solid handling issues, long residence times, complex purification, phase separation challenges, etc.). Be specific about the technical limitations.]
+    [IF SCORE 7-10: One concise paragraph explaining the main advantage of using flow chemistry for this reaction - focus on waste reduction, safety, energy efficiency, or scalability]
+  </p>
 </div>
 
 <div style="margin-bottom: 1.5rem;">
-  <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 0.75rem; font-family: 'FF Nort', sans-serif;">How Flownetics Helps</h4>
-  <p style="color: #4b5563; margin-bottom: 0; line-height: 1.7; font-size: 0.95rem; font-family: 'FF Nort', sans-serif;">[One concise paragraph explaining how Flownetics can assist with this reaction - mention their expertise, validated processes, custom reactor design, or process optimization capabilities]</p>
+  <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 0.75rem; font-family: 'FF Nort', sans-serif;">
+    [IF SCORE 0-6: "Challenges & Limitations" | IF SCORE 7-10: "How Flownetics Helps"]
+  </h4>
+  <p style="color: #4b5563; margin-bottom: 0; line-height: 1.7; font-size: 0.95rem; font-family: 'FF Nort', sans-serif;">
+    [IF SCORE 0-6: Detail the specific technical challenges and limitations that contribute to the lower score. Explain what aspects of this reaction make it less suitable for flow chemistry (e.g., requires extensive workup, generates solids that clog reactors, needs long reaction times, etc.). Keep focus on explaining why the score is low rather than how to solve it.]
+    [IF SCORE 7-10: One concise paragraph explaining how Flownetics can assist with this reaction - mention their expertise, validated processes, custom reactor design, or process optimization capabilities]
+  </p>
 </div>
 
 <div style="background-color: #f0fdf4; padding: 1.25rem; border-radius: 0.75rem; border-left: 4px solid #057210; margin-top: 1.5rem;">
   <p style="color: #166534; margin: 0; line-height: 1.6; font-size: 0.95rem; font-family: 'FF Nort', sans-serif;"><strong style="color: #166534; font-weight: 600;">Contact Flownetics</strong> for sustainable flow chemistry process development and optimization services <span style="color: #166534;">→</span></p>
 </div>
 
-IMPORTANT: Always provide complete, full answers. Do not truncate or cut off responses. Ensure all sections are fully written with complete sentences and all information is included. Each section should be comprehensive (2-4 sentences minimum, more if needed for clarity).`
+IMPORTANT: 
+- For scores 0-6: Focus content on explaining WHY the score is lower, what challenges exist, and what limitations make it less suitable. Be honest and technical about the difficulties.
+- For scores 7-10: Focus on advantages, benefits, and how Flownetics can help.
+- Always provide complete, full answers. Do not truncate or cut off responses. Ensure all sections are fully written with complete sentences and all information is included. Each section should be comprehensive (2-4 sentences minimum, more if needed for clarity).`
             }],
             temperature: 0.7,
             max_tokens: 2000
