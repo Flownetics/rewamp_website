@@ -124,6 +124,52 @@ If emails are not being sent:
    - Look for error messages in the console
    - Common issues: expired refresh token, invalid credentials
 
+3. **"invalid_grant" Error (Refresh Token Expired):**
+   
+   If you see the error `invalid_grant` or "Gmail OAuth refresh token has expired", you need to regenerate the refresh token:
+   
+   **Steps to Regenerate Gmail Refresh Token:**
+   
+   1. Go to [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
+   
+   2. Click the gear icon (⚙️) in the top right corner
+   
+   3. Check the box "Use your own OAuth credentials"
+   
+   4. Enter your credentials:
+      - **OAuth Client ID:** Your `GMAIL_CLIENT_ID` from `.env`
+      - **OAuth Client secret:** Your `GMAIL_CLIENT_SECRET` from `.env`
+   
+   5. Click "Close"
+   
+   6. In the left panel, scroll down and find **"Gmail API v1"**
+   
+   7. Select the scope: `https://mail.google.com/`
+   
+   8. Click **"Authorize APIs"** button
+   
+   9. Sign in with the Gmail account you want to use for sending emails
+   
+   10. Grant permissions when prompted
+   
+   11. You'll be redirected back to the playground
+   
+   12. Click **"Exchange authorization code for tokens"** button
+   
+   13. Copy the **"Refresh token"** value
+   
+   14. Update your `.env` file:
+      ```env
+      GMAIL_REFRESH_TOKEN=paste_your_new_refresh_token_here
+      ```
+   
+   15. Restart your server
+   
+   **Note:** Refresh tokens can expire if:
+   - They haven't been used for 6 months
+   - The user revokes access
+   - The token was generated incorrectly
+
 ### MongoDB Connection Issues
 
 If you see MongoDB connection errors:

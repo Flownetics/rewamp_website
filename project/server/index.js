@@ -117,6 +117,29 @@ async function sendEmailViaGmail(to, subject, html) {
       });
     }
 
+    // Try to refresh the access token before sending
+    try {
+      const { credentials } = await oauth2Client.refreshAccessToken();
+      oauth2Client.setCredentials(credentials);
+    } catch (refreshError) {
+      // If refresh fails, check if it's an invalid_grant error
+      if (refreshError.message && refreshError.message.includes('invalid_grant')) {
+        console.error('❌ Gmail OAuth refresh token has expired or is invalid');
+        console.error('The refresh token needs to be regenerated. Please follow these steps:');
+        console.error('1. Go to https://developers.google.com/oauthplayground');
+        console.error('2. Click the gear icon (⚙️) in the top right');
+        console.error('3. Check "Use your own OAuth credentials"');
+        console.error('4. Enter your GMAIL_CLIENT_ID and GMAIL_CLIENT_SECRET');
+        console.error('5. In the left panel, find "Gmail API v1" and select "https://mail.google.com/"');
+        console.error('6. Click "Authorize APIs" and complete the OAuth flow');
+        console.error('7. Click "Exchange authorization code for tokens"');
+        console.error('8. Copy the "Refresh token" and update GMAIL_REFRESH_TOKEN in your .env file');
+        throw new Error('Gmail OAuth refresh token has expired. Please regenerate the refresh token following the instructions in the server logs.');
+      }
+      // If it's a different error, log it but continue (the client might still work)
+      console.warn('Warning: Could not refresh access token:', refreshError.message);
+    }
+
     // Create Gmail client with authenticated OAuth2 client
     // The OAuth2 client will automatically refresh the access token if needed
     const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
@@ -154,6 +177,12 @@ async function sendEmailViaGmail(to, subject, html) {
       code: error.code,
       response: error.response?.data
     });
+    
+    // Check for invalid_grant error in the actual API call
+    if (error.message && error.message.includes('invalid_grant')) {
+      throw new Error('Gmail OAuth refresh token has expired. Please regenerate the refresh token. Check server logs for instructions.');
+    }
+    
     throw new Error(`Failed to send email: ${error.message}`);
   }
 }

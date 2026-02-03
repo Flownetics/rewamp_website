@@ -126,6 +126,11 @@ export async function downloadROIReport(data: {
       try {
         const error = await response.json();
         errorMessage = error.error || errorMessage;
+        
+        // Provide user-friendly message for invalid_grant error
+        if (errorMessage.includes('invalid_grant') || errorMessage.includes('refresh token has expired')) {
+          errorMessage = 'Email service is temporarily unavailable. Please contact support or try again later.';
+        }
       } catch {
         // If response is not JSON, use status text
         errorMessage = `Server error: ${response.status} ${response.statusText}`;
