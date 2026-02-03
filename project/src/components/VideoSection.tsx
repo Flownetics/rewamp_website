@@ -114,8 +114,9 @@ export default function VideoSection() {
               loop
               muted={isMuted}
               playsInline
+              preload="metadata"
             >
-              <source src="/media/Flownetics Video.mp4" type="video/mp4" />
+              <source src="/media/Flownetics_new _edit.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
