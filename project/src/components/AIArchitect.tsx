@@ -326,7 +326,7 @@ IMPORTANT:
                     <span>Analyzing...</span>
                   </>
                 ) : (
-                  <span>Check Flow Readiness</span>
+                  <span>Check Flow Suitability</span>
                 )}
               </button>
             </div>
