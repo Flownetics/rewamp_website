@@ -10,17 +10,17 @@ export default function VideoSection() {
         <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-gray-200/20 rounded-full mix-blend-multiply filter blur-[120px] opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-gray-300/15 rounded-full mix-blend-multiply filter blur-[120px] opacity-20"></div>
         
-        <div className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-[80%] 2xl:max-w-[75%] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+        <div className="w-full px-2 sm:px-4 lg:px-6 relative z-10">
           <div ref={containerRef} className="w-full bg-black overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl relative group transition-all border-4 border-gray-100 flex items-center justify-center">
             <img
               src="/media/FL.png"
               alt="Flownetics video placeholder"
-              className="w-full h-auto max-h-[75vh] sm:max-h-[80vh] md:max-h-[85vh] lg:max-h-[90vh] object-contain"
+              className="w-full h-auto max-h-[85vh] sm:max-h-[90vh] object-contain"
               style={{ 
-                maxWidth: '100%', 
                 width: '100%', 
                 height: 'auto',
-                display: 'block'
+                display: 'block',
+                objectFit: 'contain'
               }}
             />
 
