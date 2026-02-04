@@ -97,7 +97,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-sm">Validated</h3>
-                    <p className="text-gray-400 text-xs">100+ molecules</p>
+                    <p className="text-gray-400 text-xs">Expertly Validated Solutions</p>
                   </div>
                 </div>
                 <div className="space-y-2">
