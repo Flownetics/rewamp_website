@@ -26,6 +26,14 @@ export default function VideoSection() {
 
             {/* Gradient overlay for better visibility */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+            
+            {/* Text Overlay - Centered */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div className="text-center text-white">
+                <p style={{ fontSize: '24px', marginBottom: '20px' }}>Wanna know how we work?</p>
+                <p style={{ fontSize: '18px' }}>Video coming soon.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
