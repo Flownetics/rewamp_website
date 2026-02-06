@@ -13,7 +13,7 @@ export default function VideoSection() {
         <div className="w-full relative z-10">
           <div ref={containerRef} className="w-full bg-black overflow-hidden rounded-none sm:rounded-2xl shadow-2xl relative group transition-all border-0 sm:border-4 border-gray-100 aspect-[21/9] sm:aspect-[16/9]">
             <img
-              src="/media/FL.png"
+              src="/media/WSI (1).png"
               alt="Flownetics video placeholder"
               className="w-full h-full object-cover"
               style={{ 
