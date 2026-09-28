@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import CalBookingModal from './CalBookingModal';
+import { scrollToElement } from '../lib/scrollToElement';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Navigation() {
     { href: '#calculator', label: 'Savings' },
     { href: '#about', label: 'About' },
     { href: '#blog', label: 'Blog' },
-    { href: 'https://flownetics.beehiiv.com/', label: 'Newsletter', external: true },
+    { href: '#newsletter', label: 'Newsletter' },
   ];
 
   // Get navbar height for scroll offset
@@ -69,17 +70,7 @@ export default function Navigation() {
   }, [isMenuOpen]);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const navbarHeight = getNavbarHeight();
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarHeight - 20; // Extra 20px spacing
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    scrollToElement(href.slice(1), getNavbarHeight() + 20);
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

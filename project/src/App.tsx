@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import VideoSection from './components/VideoSection';
@@ -15,6 +16,7 @@ import BlogDetail from './components/BlogDetail';
 import AdminDashboard from './components/AdminDashboard';
 import PathToProductionDetail from './components/PathToProductionDetail';
 import SEO from './components/SEO';
+import { scrollToElement } from './lib/scrollToElement';
 
 function HomePage() {
   return (
@@ -50,6 +52,21 @@ function HomePage() {
 }
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const targetId = location.hash.slice(1);
+    if (targetId !== 'footer' && targetId !== 'newsletter') {
+      return;
+    }
+
+    const frameId = requestAnimationFrame(() => {
+      scrollToElement(targetId);
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [location.hash]);
+
   return (
     <div className="bg-white text-brand-black selection:bg-brand-purple selection:text-white">
       <Navigation />

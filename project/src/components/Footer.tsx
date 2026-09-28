@@ -56,7 +56,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-gray-900 text-white pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6">
+      <footer id="footer" className="bg-gray-900 text-white pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
             <div>
@@ -116,7 +116,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            <div id="newsletter">
               <h4 className="text-sm sm:text-base font-medium mb-2 sm:mb-3" style={{ fontFamily: "'FF Nort', sans-serif" }}>Newsletter</h4>
               <p className="text-gray-400 text-xs sm:text-sm mb-2 sm:mb-3 font-light" style={{ fontFamily: "'FF Nort', sans-serif" }}>
                 Stay updated with the latest in flow chemistry and AI-driven innovation.
