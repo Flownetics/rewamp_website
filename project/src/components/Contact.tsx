@@ -168,7 +168,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative" id="downloads">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/20 to-brand-orange/20 rounded-xl blur-xl"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4">
                 <div className="flex items-center gap-2 mb-3">
@@ -203,7 +203,7 @@ export default function Contact() {
             </div>
 
             {downloads.length > 0 && (
-              <section id="downloads" className="pt-2" aria-labelledby="downloads-heading">
+              <section className="pt-2" aria-labelledby="downloads-heading">
                 <div className="flex items-center justify-between border-b border-white/10 pb-2">
                   <p
                     id="downloads-heading"
