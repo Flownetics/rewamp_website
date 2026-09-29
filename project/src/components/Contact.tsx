@@ -203,7 +203,7 @@ export default function Contact() {
             </div>
 
             {downloads.length > 0 && (
-              <section className="pt-2" aria-labelledby="downloads-heading">
+              <section id="downloads" className="pt-2" aria-labelledby="downloads-heading">
                 <div className="flex items-center justify-between border-b border-white/10 pb-2">
                   <p
                     id="downloads-heading"

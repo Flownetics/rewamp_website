@@ -56,7 +56,7 @@ function App() {
 
   useEffect(() => {
     const targetId = location.hash.slice(1);
-    if (targetId !== 'footer' && targetId !== 'newsletter') {
+    if (targetId !== 'footer' && targetId !== 'newsletter' && targetId !== 'downloads') {
       return;
     }
 
